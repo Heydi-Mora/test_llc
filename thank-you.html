@@ -1,76 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thank You | MORA Growth Analytics</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
+    :root {
+      --plum: #2b1b24;
+      --rose: #c05a72;
+      --bg: #fcfafb;
+      --white: #ffffff;
+      --ink: #1d1720;
+      --shadow: 0 18px 40px rgba(43, 27, 36, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      margin:0;
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-family: Inter, sans-serif;
-      background:#fcfafb;
-      color:#1d1720;
-      text-align:center;
-      padding:20px;
+      background:
+        radial-gradient(circle at top left, rgba(192, 90, 114, 0.12), transparent 28%),
+        radial-gradient(circle at top right, rgba(43, 27, 36, 0.06), transparent 24%),
+        var(--bg);
+      color: var(--ink);
+      text-align: center;
+      padding: 20px;
     }
 
     .card {
-      background:white;
-      padding:40px;
-      border-radius:24px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.05);
-      max-width:500px;
-      width:100%;
+      background: rgba(255,255,255,0.92);
+      padding: 40px;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      max-width: 560px;
+      width: 100%;
+      border: 1px solid rgba(43, 27, 36, 0.08);
     }
 
     img {
-      width:160px;
-      margin-bottom:20px;
+      width: 170px;
+      margin: 0 auto 20px;
     }
 
     h1 {
       font-family: "Playfair Display", serif;
-      color:#2b1b24;
-      font-size:2.5rem;
-      margin-bottom:10px;
+      color: var(--plum);
+      font-size: 2.5rem;
+      margin-bottom: 12px;
     }
 
     p {
-      font-size:1.1rem;
-      margin-bottom:20px;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 16px;
     }
 
     .btn {
-      background:#2b1b24;
-      color:white;
-      padding:12px 20px;
-      border-radius:30px;
-      text-decoration:none;
-      display:inline-block;
-      font-weight:600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--plum), #4b2a39);
+      color: white;
+      text-decoration: none;
+      margin-top: 8px;
     }
   </style>
 </head>
-
 <body>
-
   <div class="card">
-    <img src="logo.png" alt="MORA logo">
+    <img src="logo.png" alt="MORA Growth Analytics logo">
 
     <h1>Thank you.</h1>
 
-    <p>Your message has been received.</p>
-    <p>We’ll review your request and get back to you shortly.</p>
+    <p>Your inquiry has been received.</p>
+    <p>We’ll review your message and get back to you as soon as possible.</p>
 
-    <a class="btn" href="/">Return to homepage</a>
+    <a class="btn" href="./index.html">Return to homepage</a>
   </div>
-
 </body>
 </html>
