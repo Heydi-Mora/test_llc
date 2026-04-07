@@ -444,7 +444,7 @@
           <h3>Publishing checklist</h3>
           <div class="checklist">
             <div>Replace <strong>logo.png</strong> with your final logo file.</div>
-            <div>Replace <strong>YOUR_GOOGLE_SCRIPT_URL_HERE</strong> with your deployed Google Apps Script web app URL.</div>
+            <div>Replace <strong>https://script.google.com/macros/s/AKfycbzLJ9eWf9rkikRWjsikx_z_qo_ixphI_2x5vPJtWaDx6UIjKPp7CcAu4_bIHhc8kE0H/exec</strong> with your deployed Google Apps Script web app URL.</div>
             <div>Replace the thank-you page URL in the script with your real GitHub Pages thank-you URL.</div>
             <div>Replace the Calendly link with your booking URL.</div>
             <div>Update contact details, phone number, social links, and legal footer.</div>
@@ -494,7 +494,7 @@
       const data = Object.fromEntries(formData.entries());
 
       try {
-        const response = await fetch('YOUR_GOOGLE_SCRIPT_URL_HERE', {
+        const response = await fetch('https://script.google.com/macros/s/AKfycbzLJ9eWf9rkikRWjsikx_z_qo_ixphI_2x5vPJtWaDx6UIjKPp7CcAu4_bIHhc8kE0H/exec', {
           method: 'POST',
           headers: {
             'Content-Type': 'text/plain;charset=utf-8'
@@ -508,9 +508,9 @@
           throw new Error('Submission failed');
         }
 
-        window.location.href = 'https://yourusername.github.io/your-repo-name/thank-you.html';
+        window.location.href = 'https://heydi-mora.github.io/test llc/thank-you.html';
       } catch (error) {
-        formStatus.textContent = 'There was a problem sending your message. Please email us directly at hello@moragrowth.com.';
+        formStatus.textContent = 'There was a problem sending your message. Please email us directly at heydi.mora4@gmail.com.';
       }
     });
   </script>
