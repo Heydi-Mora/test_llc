@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You | MORA Growth Analytics</title>
+  <meta name="description" content="Thank you for contacting MORA Growth Analytics." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --plum: #2b1b24;
+      --rose: #c05a72;
+      --bg: #fcfafb;
+      --white: #ffffff;
+      --ink: #1d1720;
+      --shadow: 0 18px 40px rgba(43, 27, 36, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+      background:
+        radial-gradient(circle at top left, rgba(192, 90, 114, 0.12), transparent 28%),
+        radial-gradient(circle at top right, rgba(43, 27, 36, 0.06), transparent 24%),
+        var(--bg);
+      font-family: Inter, sans-serif;
+      color: var(--ink);
+    }
+    .card {
+      width: min(720px, 100%);
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(43,27,36,0.08);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 2rem;
+      text-align: center;
+    }
+    .logo {
+      width: 180px;
+      margin: 0 auto 1.5rem;
+      display: block;
+    }
+    h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      color: var(--plum);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      line-height: 1.05;
+      margin: 0 0 1rem;
+    }
+    p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin: 0 0 1rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.95rem 1.25rem;
+      border-radius: 999px;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--plum), #482638);
+      color: var(--white);
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img class="logo" src="logo.png" alt="MORA Growth Analytics logo">
+    <h1>Thank you.</h1>
+    <p>Your inquiry has been received.</p>
+    <p>We’ll review your request and get back to you as soon as possible.</p>
+    <a class="btn" href="https://yourusername.github.io/your-repo-name/">Return to homepage</a>
+  </div>
+</body>
+</html>
