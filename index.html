@@ -3,576 +3,233 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="MORA Growth Analytics provides human-centered data analytics consulting for mental health providers and legal nonprofits." />
   <title>MORA Growth Analytics</title>
+  <meta name="description" content="MORA Growth Analytics helps founders and teams turn data into clear insights and meaningful impact." />
+  <meta name="theme-color" content="#2B1B24" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --rose: #C06A85;
-      --plum: #3B2738;
-      --charcoal: #1F1F24;
-      --blush: #F7F2F3;
-      --fog: #E6E3E7;
-      --white: #FCFBFC;
-      --text: #2A2730;
-      --max: 1160px;
-      --shadow: 0 18px 50px rgba(59, 39, 56, 0.08);
+      --plum: #2b1b24;
+      --rose: #c05a72;
+      --ink: #1d1720;
+      --white: #ffffff;
+      --bg: #fcfafb;
+      --card: rgba(255,255,255,0.82);
+      --shadow: 0 18px 40px rgba(43,27,36,0.08);
       --radius: 24px;
+      --max: 1180px;
     }
-
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background: var(--white);
+      font-family: Inter, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(192,90,114,0.12), transparent 28%),
+        radial-gradient(circle at top right, rgba(43,27,36,0.06), transparent 24%),
+        var(--bg);
       line-height: 1.6;
     }
-
-    h1, h2, h3, .brand-wordmark {
-      font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-      letter-spacing: 0.02em;
+    h1, h2, h3 {
+      font-family: "Playfair Display", Georgia, serif;
       color: var(--plum);
-      margin: 0;
+      letter-spacing: -0.02em;
     }
-
-    p { margin: 0; }
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
-
-    .container {
-      width: min(calc(100% - 2rem), var(--max));
-      margin: 0 auto;
-    }
-
+    .container { width: min(var(--max), calc(100% - 2rem)); margin: 0 auto; }
     .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(252, 251, 252, 0.92);
-      border-bottom: 1px solid rgba(59, 39, 56, 0.08);
-      backdrop-filter: blur(10px);
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(14px);
+      background: rgba(252,250,251,0.85);
+      border-bottom: 1px solid rgba(43,27,36,0.08);
     }
-
     .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 76px;
-      gap: 1rem;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; padding: 1rem 0;
     }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-    }
-
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      border: 2px solid var(--rose);
-      position: relative;
-      flex: 0 0 auto;
-    }
-
-    .brand-mark::before,
-    .brand-mark::after {
-      content: "";
-      position: absolute;
-      border-radius: 999px;
-      left: 7px;
-      right: 7px;
-      border-top: 2px solid var(--rose);
-      transform: rotate(-14deg);
-    }
-
-    .brand-mark::before {
-      top: 12px;
-      height: 10px;
-    }
-
-    .brand-mark::after {
-      top: 22px;
-      height: 12px;
-      border-top-color: rgba(59,39,56,0.8);
-    }
-
-    .brand-dot {
-      position: absolute;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--rose);
-      top: 6px;
-      right: 4px;
-      box-shadow: -10px 13px 0 0 var(--rose), -20px 24px 0 0 var(--plum);
-    }
-
-    .brand-wordmark {
-      font-size: 1.6rem;
-      font-weight: 700;
-    }
-
-    .brand-sub {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.26em;
-      color: var(--rose);
-      margin-top: 0.15rem;
-    }
-
+    .brand img { width: 170px; height: auto; }
     .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      flex-wrap: wrap;
-      justify-content: flex-end;
+      display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap;
+      font-size: 0.95rem; color: rgba(43,27,36,0.88);
     }
-
-    .nav-links a {
-      font-size: 0.95rem;
-      color: rgba(42, 39, 48, 0.86);
-    }
-
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      border-radius: 999px;
-      padding: 0.92rem 1.3rem;
-      font-weight: 600;
-      transition: 180ms ease;
-      border: 1px solid transparent;
-      cursor: pointer;
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.95rem 1.25rem; border-radius: 999px; font-weight: 700;
+      border: 0; cursor: pointer;
     }
-
     .btn-primary {
-      background: var(--plum);
       color: var(--white);
-      box-shadow: var(--shadow);
+      background: linear-gradient(135deg, var(--plum), #482638);
+      box-shadow: 0 12px 24px rgba(43,27,36,0.18);
     }
-
-    .btn-primary:hover { transform: translateY(-1px); }
-
     .btn-secondary {
-      background: transparent;
+      background: rgba(192,90,114,0.12);
       color: var(--plum);
-      border-color: rgba(59, 39, 56, 0.16);
+      border: 1px solid rgba(192,90,114,0.22);
     }
-
-    .hero {
-      padding: 5.5rem 0 4rem;
-      background: linear-gradient(180deg, rgba(247,242,243,0.8) 0%, rgba(252,251,252,1) 100%);
-    }
-
+    .hero { padding: 5.5rem 0 4rem; }
     .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 2rem;
-      align-items: center;
+      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2rem; align-items: center;
     }
-
     .eyebrow {
-      display: inline-block;
-      margin-bottom: 1rem;
-      padding: 0.35rem 0.8rem;
-      border-radius: 999px;
-      background: rgba(192, 106, 133, 0.12);
-      color: var(--rose);
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
+      display: inline-flex; padding: 0.45rem 0.85rem; border-radius: 999px;
+      background: rgba(192,90,114,0.1); color: var(--rose);
+      font-size: 0.88rem; font-weight: 700; margin-bottom: 1rem;
     }
-
-    .hero h1 {
-      font-size: clamp(2.8rem, 6vw, 5rem);
-      line-height: 0.98;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.08rem;
-      max-width: 60ch;
-      color: rgba(42, 39, 48, 0.85);
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 0.9rem;
-      flex-wrap: wrap;
-      margin-bottom: 1.4rem;
-    }
-
-    .hero-points {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem 1.2rem;
-      color: rgba(42, 39, 48, 0.82);
-      font-size: 0.95rem;
-    }
-
-    .hero-card {
-      background: var(--white);
-      border: 1px solid rgba(59, 39, 56, 0.08);
-      border-radius: 28px;
-      padding: 1.6rem;
+    .hero h1 { font-size: clamp(2.8rem, 6vw, 5rem); line-height: 0.95; margin: 0 0 1rem; }
+    .lead { font-size: 1.125rem; max-width: 62ch; color: rgba(29,23,32,0.84); margin: 0 0 1.5rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; margin: 1.5rem 0 2rem; }
+    .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin-top: 2rem; }
+    .stat, .card, .panel, .hero-card, .step {
+      background: var(--card);
+      border: 1px solid rgba(43,27,36,0.08);
+      border-radius: 24px;
       box-shadow: var(--shadow);
     }
-
-    .signal {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .signal-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .signal-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--plum);
-    }
-
-    .mini-badge {
-      font-size: 0.75rem;
-      color: var(--rose);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-weight: 700;
-    }
-
-    .chart-box {
-      border-radius: 22px;
-      background: linear-gradient(180deg, rgba(247,242,243,0.9), rgba(255,255,255,1));
-      border: 1px solid rgba(59, 39, 56, 0.08);
+    .stat { padding: 1rem; }
+    .stat strong { display: block; color: var(--plum); font-size: 1.5rem; margin-bottom: 0.2rem; }
+    .hero-card { padding: 1.4rem; }
+    .hero-logo-wrap {
+      background: linear-gradient(180deg, #fff, #faf5f7);
+      border: 1px solid rgba(43,27,36,0.06);
+      border-radius: 24px;
       padding: 1rem;
-      min-height: 250px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .chart-grid {
-      position: absolute;
-      inset: 0;
-      background-image: linear-gradient(to right, rgba(59,39,56,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(59,39,56,0.05) 1px, transparent 1px);
-      background-size: 46px 46px;
-      mask-image: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.35));
-    }
-
-    .chart-line {
-      position: absolute;
-      inset: 0;
-    }
-
-    .chart-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.75rem;
-    }
-
-    .stat {
-      background: var(--blush);
-      border-radius: 18px;
-      padding: 0.95rem;
-    }
-
-    .stat strong {
-      display: block;
-      color: var(--plum);
-      font-size: 1.15rem;
-    }
-
-    .stat span {
-      display: block;
-      font-size: 0.9rem;
-      color: rgba(42,39,48,0.76);
-    }
-
-    section {
-      padding: 4.5rem 0;
-    }
-
-    .section-head {
-      display: grid;
-      gap: 0.75rem;
-      margin-bottom: 2rem;
-      max-width: 760px;
-    }
-
-    .section-head h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.06;
-    }
-
-    .section-head p {
-      color: rgba(42,39,48,0.8);
-      font-size: 1.03rem;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.25rem;
-    }
-
-    .card {
-      background: var(--white);
-      border: 1px solid rgba(59, 39, 56, 0.08);
-      border-radius: var(--radius);
-      padding: 1.4rem;
-      box-shadow: var(--shadow);
-    }
-
-    .card h3 {
-      font-size: 1.35rem;
-      margin-bottom: 0.65rem;
-    }
-
-    .card p, .card li { color: rgba(42,39,48,0.84); }
-    .card ul { padding-left: 1.15rem; margin: 0.8rem 0 0; }
-
-    .icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
       margin-bottom: 1rem;
-      background: rgba(192, 106, 133, 0.12);
-      color: var(--rose);
-      font-weight: 800;
     }
-
-    .split {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 1.5rem;
-      align-items: start;
+    .mini-panel { display: grid; gap: 0.8rem; }
+    .mini-row {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem; padding: 0.9rem 1rem;
+      background: rgba(192,90,114,0.08);
+      border-radius: 18px;
+      border: 1px solid rgba(192,90,114,0.14);
     }
-
-    .stack { display: grid; gap: 1rem; }
-
-    .list-card {
-      background: linear-gradient(180deg, rgba(247,242,243,0.72), rgba(252,251,252,1));
-      border: 1px solid rgba(59, 39, 56, 0.08);
-      border-radius: var(--radius);
-      padding: 1.25rem;
+    .mini-row span:last-child { color: var(--plum); font-weight: 700; }
+    .logo-note { font-size: 0.9rem; margin-top: 0.8rem; color: rgba(29,23,32,0.68); }
+    section { padding: 4.5rem 0; }
+    .section-head { max-width: 700px; margin-bottom: 2rem; }
+    .section-head h2 { font-size: clamp(2rem, 4vw, 3.1rem); margin: 0 0 0.7rem; }
+    .section-head p { margin: 0; color: rgba(29,23,32,0.82); font-size: 1.05rem; }
+    .services-grid, .results-grid, .insights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .about-grid, .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+    .card, .panel, .step { padding: 1.4rem; }
+    .icon {
+      width: 52px; height: 52px; border-radius: 16px; display: inline-grid; place-items: center;
+      margin-bottom: 1rem; background: rgba(192,90,114,0.12); color: var(--rose); font-weight: 800;
     }
-
-    .list-card strong {
-      display: block;
-      color: var(--plum);
-      margin-bottom: 0.35rem;
+    .card ul { padding-left: 1.1rem; margin: 0.8rem 0 0; color: rgba(29,23,32,0.82); }
+    .checklist { display: grid; gap: 0.8rem; margin-top: 1rem; }
+    .checklist div {
+      padding: 0.9rem 1rem; border-radius: 16px;
+      background: rgba(255,255,255,0.72); border: 1px solid rgba(43,27,36,0.06);
     }
-
-    .industries {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
+    .step-number {
+      width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
+      background: var(--plum); color: var(--white); font-weight: 800; margin-bottom: 0.9rem;
     }
-
-    .industry {
-      background: var(--white);
-      border: 1px solid rgba(59, 39, 56, 0.08);
-      border-radius: 22px;
-      padding: 1.3rem;
-      box-shadow: var(--shadow);
+    .metric {
+      font-size: clamp(2rem, 3vw, 3rem);
+      color: var(--plum); font-family: "Playfair Display", Georgia, serif; margin: 0 0 0.35rem;
     }
-
-    .quote {
-      background: var(--plum);
-      color: var(--white);
-      border-radius: 30px;
-      padding: 2rem;
-      box-shadow: var(--shadow);
+    .testimonial {
+      margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(43,27,36,0.08);
+      color: rgba(29,23,32,0.78); font-size: 0.98rem;
     }
-
-    .quote p {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.92);
-    }
-
-    .quote strong {
-      display: inline-block;
-      margin-top: 1rem;
-      color: #fff;
-    }
-
-    .contact-wrap {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 1.3rem;
-    }
-
-    .contact-card,
-    .form-card {
-      border-radius: 28px;
-      padding: 1.5rem;
-      border: 1px solid rgba(59, 39, 56, 0.08);
-      box-shadow: var(--shadow);
-      background: var(--white);
-    }
-
-    .contact-card {
-      background: linear-gradient(180deg, rgba(247,242,243,0.72), rgba(252,251,252,1));
-    }
-
-    .contact-list {
-      display: grid;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .contact-item span {
-      display: block;
-      font-size: 0.83rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--rose);
-      font-weight: 700;
-      margin-bottom: 0.2rem;
-    }
-
-    form {
-      display: grid;
-      gap: 0.95rem;
-    }
-
-    label {
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: var(--plum);
-    }
-
+    .insight-card a { display: inline-flex; margin-top: 0.9rem; color: var(--rose); font-weight: 700; }
+    form { display: grid; gap: 0.95rem; }
+    label { font-weight: 700; color: var(--plum); font-size: 0.95rem; }
     input, textarea, select {
-      width: 100%;
-      margin-top: 0.35rem;
-      border-radius: 16px;
-      border: 1px solid rgba(59, 39, 56, 0.14);
-      padding: 0.95rem 1rem;
-      font: inherit;
-      background: #fff;
-      color: var(--text);
+      width: 100%; margin-top: 0.35rem; padding: 0.95rem 1rem;
+      border-radius: 16px; border: 1px solid rgba(43,27,36,0.12);
+      background: rgba(255,255,255,0.86); font: inherit; color: var(--ink);
     }
-
-    textarea { min-height: 140px; resize: vertical; }
-
-    footer {
-      padding: 2rem 0 3rem;
-      border-top: 1px solid rgba(59, 39, 56, 0.08);
-      background: var(--white);
+    textarea { min-height: 150px; resize: vertical; }
+    .contact-list { display: grid; gap: 0.9rem; margin: 1rem 0 1.4rem; }
+    .contact-item {
+      padding: 1rem; border-radius: 18px;
+      background: rgba(192,90,114,0.09); border: 1px solid rgba(192,90,114,0.14);
     }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-      color: rgba(42,39,48,0.76);
-      font-size: 0.95rem;
+    .footer-grid { display: grid; grid-template-columns: 1.2fr 0.8fr 0.8fr; gap: 1.25rem; align-items: start; }
+    footer { padding: 2rem 0 3rem; border-top: 1px solid rgba(43,27,36,0.08); }
+    .footer-brand img { width: 180px; margin-bottom: 1rem; }
+    .footer-links { display: grid; gap: 0.55rem; color: rgba(29,23,32,0.82); }
+    .muted { color: rgba(29,23,32,0.74); }
+    .badge-row { display: flex; gap: 0.7rem; flex-wrap: wrap; margin-top: 1rem; }
+    .badge {
+      padding: 0.45rem 0.75rem; border-radius: 999px;
+      background: rgba(192,90,114,0.1); color: var(--rose); font-size: 0.82rem; font-weight: 700;
     }
-
-    @media (max-width: 980px) {
-      .hero-grid,
-      .split,
-      .contact-wrap,
-      .cards {
+    @media (max-width: 1024px) {
+      .hero-grid, .about-grid, .contact-grid, .footer-grid, .services-grid, .results-grid, .insights-grid, .steps {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hero-stats { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 760px) {
+      .nav { flex-direction: column; align-items: stretch; }
+      .hero, section { padding: 3.5rem 0; }
+      .hero-grid, .about-grid, .contact-grid, .footer-grid, .services-grid, .results-grid, .insights-grid, .steps {
         grid-template-columns: 1fr;
       }
-
-      .industries,
-      .chart-stats {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .nav { align-items: flex-start; padding: 0.8rem 0; }
-      .nav-links { gap: 0.8rem; }
-      .hero { padding-top: 4rem; }
-      .hero h1 { font-size: 2.5rem; }
-      .brand-wordmark { font-size: 1.35rem; }
-      .brand-sub { letter-spacing: 0.18em; }
+      .brand { justify-content: center; }
+      .brand img, .footer-brand img { width: 150px; }
     }
   </style>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="topbar">
     <div class="container nav">
-      <a href="#home" class="brand" aria-label="MORA Growth Analytics home">
-        <div class="brand-mark" aria-hidden="true">
-          <div class="brand-dot"></div>
-        </div>
-        <div>
-          <div class="brand-wordmark">MORA</div>
-          <div class="brand-sub">Growth Analytics</div>
-        </div>
+      <a class="brand" href="#home" aria-label="MORA Growth Analytics home">
+        <img src="logo.png" alt="MORA Growth Analytics logo" />
       </a>
-      <nav class="nav-links" aria-label="Primary navigation">
+      <nav class="nav-links" aria-label="Primary">
         <a href="#services">Services</a>
-        <a href="#industries">Who I Help</a>
+        <a href="#about">About</a>
         <a href="#process">Process</a>
-        <a href="#contact" class="btn btn-primary">Book a Consultation</a>
+        <a href="#insights">Insights</a>
+        <a href="#book">Book</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="#contact">Book a strategy call</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero" id="home">
+  <main id="home">
+    <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Human-centered analytics consulting</div>
-          <h1>Clear insights for meaningful impact.</h1>
-          <p>
-            MORA Growth Analytics helps mission-driven organizations turn messy data into better decisions. I partner with mental health providers, legal nonprofits, and values-led teams that need strategy, reporting, dashboards, and analysis they can actually use.
+          <div class="eyebrow">Growth strategy • analytics • decision support</div>
+          <h1>Clear insights.<br><span style="font-style: italic; font-weight: 700;">Meaningful</span> impact.</h1>
+          <p class="lead">
+            MORA Growth Analytics helps founders, service firms, and scaling teams turn disconnected data into practical strategy.
+            We build clear reporting, identify growth opportunities, and help you make confident decisions that move the business forward.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Start a Project</a>
-            <a class="btn btn-secondary" href="#services">Explore Services</a>
+            <a class="btn btn-primary" href="#contact">Start your project</a>
+            <a class="btn btn-secondary" href="#services">Explore services</a>
+            <a class="btn btn-secondary" href="#book">Book on Calendly</a>
           </div>
-          <div class="hero-points">
-            <span>Dashboards & reporting</span>
-            <span>Program evaluation</span>
-            <span>Data strategy</span>
-            <span>Decision support</span>
+          <div class="hero-stats">
+            <div class="stat"><strong>Strategy</strong>Dashboards, KPI design, measurement frameworks, and growth planning.</div>
+            <div class="stat"><strong>Clarity</strong>Reporting built for decisions, not just data collection.</div>
+            <div class="stat"><strong>Impact</strong>Recommendations tied to revenue, retention, and operational efficiency.</div>
           </div>
         </div>
-
-        <aside class="hero-card signal" aria-label="Sample analytics insight panel">
-          <div class="signal-head">
-            <div>
-              <div class="mini-badge">Sample outcome</div>
-              <div class="signal-title">From scattered data to a clear story</div>
-            </div>
+        <aside class="hero-card">
+          <div class="hero-logo-wrap">
+            <img src="logo.png" alt="MORA Growth Analytics full logo">
           </div>
-          <div class="chart-box">
-            <div class="chart-grid"></div>
-            <svg class="chart-line" viewBox="0 0 600 300" aria-hidden="true">
-              <path d="M40 220 C120 200, 160 180, 220 182 S340 205, 420 145 S500 90, 560 70" fill="none" stroke="#C06A85" stroke-width="5" stroke-linecap="round"/>
-              <path d="M40 240 C120 238, 170 228, 240 208 S340 175, 420 170 S500 140, 560 132" fill="none" stroke="#3B2738" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
-              <circle cx="220" cy="182" r="8" fill="#C06A85"/>
-              <circle cx="420" cy="145" r="8" fill="#C06A85"/>
-              <circle cx="320" cy="188" r="9" fill="#3B2738"/>
-              <circle cx="560" cy="70" r="10" fill="#C06A85"/>
-            </svg>
+          <div class="mini-panel">
+            <div class="mini-row"><span>Primary focus</span><span>Growth analytics</span></div>
+            <div class="mini-row"><span>Ideal clients</span><span>Founders & small teams</span></div>
+            <div class="mini-row"><span>Engagements</span><span>Audit • advisory • reporting</span></div>
           </div>
-          <div class="chart-stats">
-            <div class="stat"><strong>1 source of truth</strong><span>Consolidated reporting</span></div>
-            <div class="stat"><strong>Faster decisions</strong><span>Clearer operational visibility</span></div>
-            <div class="stat"><strong>Better alignment</strong><span>Leadership-ready insights</span></div>
-          </div>
+          <p class="logo-note">Place your final logo file in the same folder as this page and name it <strong>logo.png</strong>.</p>
         </aside>
       </div>
     </section>
@@ -580,212 +237,282 @@
     <section id="services">
       <div class="container">
         <div class="section-head">
-          <div class="eyebrow">Services</div>
-          <h2>Analytics support built for organizations doing meaningful work.</h2>
-          <p>
-            Whether you need a one-time project or an ongoing analytics partner, I build practical systems that help your team understand performance, communicate impact, and make smarter choices.
-          </p>
+          <h2>Services built for growing businesses</h2>
+          <p>Choose a focused engagement or combine services into a custom growth support package. Every deliverable is designed to help you see what matters, act faster, and measure real progress.</p>
         </div>
-        <div class="cards">
+        <div class="services-grid">
           <article class="card">
             <div class="icon">01</div>
-            <h3>Data Strategy</h3>
-            <p>Clarify what to measure, what matters most, and how your team should use data in everyday decision-making.</p>
+            <h3>Analytics Audit</h3>
+            <p>Find gaps in your measurement setup and get a practical roadmap for cleaner, more reliable data.</p>
             <ul>
-              <li>KPI framework design</li>
-              <li>Data audits and roadmaps</li>
-              <li>Measurement planning</li>
+              <li>Data source review</li>
+              <li>KPI and reporting assessment</li>
+              <li>Tracking and process recommendations</li>
             </ul>
           </article>
           <article class="card">
             <div class="icon">02</div>
-            <h3>Dashboards & Reporting</h3>
-            <p>Create executive-ready dashboards and reporting systems that reduce manual work and improve visibility.</p>
+            <h3>Dashboard Design</h3>
+            <p>Custom dashboards that turn noise into insight so leaders can make better decisions at a glance.</p>
             <ul>
-              <li>Dashboard design</li>
-              <li>Board and funder reporting</li>
-              <li>Automated reporting workflows</li>
+              <li>Executive overview dashboards</li>
+              <li>Sales and marketing reporting</li>
+              <li>Weekly and monthly performance views</li>
             </ul>
           </article>
           <article class="card">
             <div class="icon">03</div>
-            <h3>Evaluation & Insight</h3>
-            <p>Turn raw program or operational data into narratives that support improvement, funding, and long-term impact.</p>
+            <h3>Growth Strategy Support</h3>
+            <p>Translate your numbers into strategic action with focused analysis and recommendations.</p>
             <ul>
-              <li>Program evaluation</li>
-              <li>Trend and cohort analysis</li>
-              <li>Decision memos and recommendations</li>
+              <li>Opportunity analysis</li>
+              <li>Retention and funnel insights</li>
+              <li>Priority planning for growth</li>
             </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="industries" style="background: var(--blush);">
-      <div class="container split">
-        <div class="section-head" style="margin-bottom: 0;">
-          <div class="eyebrow">Who I help</div>
-          <h2>Specialized support for mission-driven organizations.</h2>
-          <p>
-            My work is especially suited to teams that care deeply about people and outcomes, but need a clearer way to understand what their data is saying.
-          </p>
+    <section id="about">
+      <div class="container about-grid">
+        <div class="panel">
+          <div class="section-head">
+            <h2>Why MORA</h2>
+            <p>MORA Growth Analytics was built for businesses that want more than charts and reports. You need insight that is accurate, easy to understand, and directly connected to action.</p>
+          </div>
+          <div class="checklist">
+            <div><strong>Clear communication:</strong> We translate complex numbers into plain-language recommendations.</div>
+            <div><strong>Business-first thinking:</strong> Metrics only matter when they support better decisions.</div>
+            <div><strong>Modern, polished delivery:</strong> Every dashboard, report, and presentation is built to reflect your brand and credibility.</div>
+          </div>
         </div>
-        <div class="industries">
-          <div class="industry">
-            <h3>Mental Health Providers</h3>
-            <p>Support with outcomes tracking, service delivery trends, operational visibility, referral patterns, and leadership reporting.</p>
-          </div>
-          <div class="industry">
-            <h3>Legal Nonprofits</h3>
-            <p>Support with impact reporting, grant reporting, case trends, intake analysis, service equity, and resource planning.</p>
-          </div>
-          <div class="industry">
-            <h3>Foundations & nonprofits</h3>
-            <p>Translate program data into strategy, board updates, and funder-facing stories that reflect real impact.</p>
-          </div>
-          <div class="industry">
-            <h3>Values-led service firms</h3>
-            <p>Design practical data systems that improve operations without losing the human side of the work.</p>
+        <div class="panel">
+          <h3>What clients get</h3>
+          <p>A strategic partner that helps connect the dots between reporting, operations, and revenue. Whether you need a one-time analytics cleanup or ongoing advisory, MORA brings structure, confidence, and momentum to your growth efforts.</p>
+          <div class="badge-row">
+            <span class="badge">KPI frameworks</span>
+            <span class="badge">Executive dashboards</span>
+            <span class="badge">Funnel analysis</span>
+            <span class="badge">Retention insights</span>
+            <span class="badge">Quarterly planning</span>
           </div>
         </div>
       </div>
     </section>
 
     <section id="process">
-      <div class="container split">
-        <div class="stack">
-          <div class="section-head" style="margin-bottom: 0;">
-            <div class="eyebrow">Process</div>
-            <h2>A calm, collaborative way to make data useful.</h2>
-            <p>
-              The goal is not to overwhelm you with analytics. The goal is to help you see what matters, communicate it clearly, and use it well.
-            </p>
+      <div class="container">
+        <div class="section-head">
+          <h2>A process designed for clarity</h2>
+          <p>Our engagements are structured to reduce confusion and create momentum quickly.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-number">1</div><h3>Discover</h3><p>We review your goals, current reporting, and where the business needs more visibility.</p></div>
+          <div class="step"><div class="step-number">2</div><h3>Diagnose</h3><p>We identify tracking gaps, performance patterns, and decision bottlenecks.</p></div>
+          <div class="step"><div class="step-number">3</div><h3>Design</h3><p>We create dashboards, frameworks, and recommendations aligned with your priorities.</p></div>
+          <div class="step"><div class="step-number">4</div><h3>Deliver</h3><p>You receive practical insights, polished assets, and a clear next-step plan.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="results">
+      <div class="container">
+        <div class="section-head">
+          <h2>Example outcomes you can feature</h2>
+          <p>Replace these with your real results as you build case studies. The structure is already ready for you.</p>
+        </div>
+        <div class="results-grid">
+          <div class="card"><p class="metric">22%</p><h3>Increase in reporting efficiency</h3><p>Consolidated fragmented data into a weekly dashboard used by leadership.</p><div class="testimonial">“We finally had one source of truth for decision-making.”</div></div>
+          <div class="card"><p class="metric">18%</p><h3>Improvement in conversion visibility</h3><p>Clarified funnel leakage and prioritized optimizations across lead stages.</p><div class="testimonial">“The analysis made our next steps obvious.”</div></div>
+          <div class="card"><p class="metric">10 hrs</p><h3>Saved per week</h3><p>Replaced manual reporting workflows with streamlined, reusable dashboards.</p><div class="testimonial">“The system saved time and raised confidence in our numbers.”</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="insights">
+      <div class="container">
+        <div class="section-head">
+          <h2>Insights worth sharing</h2>
+          <p>Add your articles, posts, or downloadable resources here to build trust and show your expertise.</p>
+        </div>
+        <div class="insights-grid">
+          <article class="card insight-card"><h3>5 KPIs every growing service business should track</h3><p>Show prospects you understand the numbers that actually shape healthy growth.</p><a href="#contact">Use this as your first lead magnet →</a></article>
+          <article class="card insight-card"><h3>Why clean dashboards outperform crowded reports</h3><p>Explain how design and decision-making work together in effective analytics.</p><a href="#contact">Turn this into a blog post →</a></article>
+          <article class="card insight-card"><h3>How to move from reporting to action</h3><p>Teach visitors what meaningful analytics support really looks like.</p><a href="#contact">Turn this into a workshop topic →</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="book">
+      <div class="container about-grid">
+        <div class="panel">
+          <div class="section-head">
+            <h2>Book a strategy call</h2>
+            <p>Add your Calendly link below so visitors can book time with you right from the site. You can keep the inquiry form for detailed project requests and use Calendly for faster calls.</p>
           </div>
-          <div class="quote">
-            <p>“Good analytics should create clarity, not confusion. It should help your team make better decisions with more confidence.”</p>
-            <strong>MORA Growth Analytics</strong>
+          <div class="checklist">
+            <div><strong>Calendly link:</strong> Replace every <strong>https://calendly.com/yourname</strong> with your real booking link.</div>
+            <div><strong>Best use:</strong> Discovery calls, consultations, and short intro meetings.</div>
+            <div><strong>Simple setup:</strong> This works on GitHub Pages without needing a backend.</div>
+          </div>
+          <div class="hero-actions" style="margin-top:1.25rem;">
+            <a class="btn btn-primary" href="https://calendly.com/yourname" target="_blank" rel="noopener">Open Calendly</a>
+            <a class="btn btn-secondary" href="#contact">Send an inquiry instead</a>
           </div>
         </div>
-        <div class="stack">
-          <div class="list-card">
-            <strong>1. Discovery</strong>
-            <p>We identify your goals, stakeholders, pain points, and the decisions your data needs to support.</p>
-          </div>
-          <div class="list-card">
-            <strong>2. Structure</strong>
-            <p>I organize and assess your existing data, reporting workflows, and measurement priorities.</p>
-          </div>
-          <div class="list-card">
-            <strong>3. Insight</strong>
-            <p>I build the analysis, dashboard, or reporting system that turns complexity into something useful.</p>
-          </div>
-          <div class="list-card">
-            <strong>4. Action</strong>
-            <p>You leave with clear recommendations, practical tools, and a better foundation for decision-making.</p>
+        <div class="panel">
+          <h3>Recommended lead flow</h3>
+          <p>Give visitors two options: book a call if they are ready now, or submit the contact form if they need a custom proposal. This usually increases conversions and makes your site feel more professional.</p>
+          <div class="badge-row">
+            <span class="badge">Fast booking</span>
+            <span class="badge">Higher conversion</span>
+            <span class="badge">Low friction</span>
+            <span class="badge">GitHub-ready</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" style="background: linear-gradient(180deg, rgba(247,242,243,0.78), rgba(252,251,252,1));">
-      <div class="container contact-wrap">
-        <div class="contact-card">
-          <div class="eyebrow">Contact</div>
-          <h2 style="font-size: 2.2rem; margin-bottom: 0.8rem;">Let’s talk about your data needs.</h2>
-          <p>
-            Replace the details below with your real contact information. To receive every inquiry by email while hosting on GitHub Pages, connect this form to Formspree or Getform. When someone submits the form, the service will send the entered details straight to your inbox.
-          </p>
-          <div class="contact-list">
-            <div class="contact-item">
-              <span>Email</span>
-              <a href="mailto:hello@moragrowthanalytics.com">hello@moragrowthanalytics.com</a>
-            </div>
-            <div class="contact-item">
-              <span>Location</span>
-              <div>Based in the United States · Serving clients remotely</div>
-            </div>
-            <div class="contact-item">
-              <span>Availability</span>
-              <div>Project-based engagements and retained consulting support</div>
-            </div>
-          </div>
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <h2>Frequently asked questions</h2>
+          <p>A simple FAQ helps reduce hesitation and makes your offer easier to understand.</p>
         </div>
+        <div class="services-grid">
+          <article class="card"><h3>Who do you work with?</h3><p>We work with founders, service businesses, consultants, and growing teams that want better reporting and smarter growth decisions.</p></article>
+          <article class="card"><h3>Do you offer one-time projects?</h3><p>Yes. We offer focused audits, dashboard builds, and short strategic engagements as well as ongoing advisory support.</p></article>
+          <article class="card"><h3>How do we get started?</h3><p>Book a discovery call through Calendly or submit the inquiry form with your goals, timeline, and current challenges.</p></article>
+        </div>
+      </div>
+    </section>
 
-        <div class="form-card">
-          <form action="https://formspree.io/f/mreojwqd" method="POST">
-            <input type="hidden" name="_subject" value="New inquiry from MORA website" />
-            <input type="hidden" name="_next" value="https://Heydi-Mora.github.io/YOUR_REPO_NAME/thanks.html" />
+    <section id="contact">
+      <div class="container contact-grid">
+        <div class="panel">
+          <div class="section-head">
+            <h2>Let’s build your next growth system</h2>
+            <p>Use this form for project inquiries, discovery calls, or partnership conversations.</p>
+          </div>
+
+          <form id="contactForm">
             <label>
               Name
-              <input type="text" name="name" placeholder="Your name" required />
-            </label>
-            <label>
-              Organization
-              <input type="text" name="organization" placeholder="Organization name" />
+              <input type="text" name="name" placeholder="Your name" required>
             </label>
             <label>
               Email
-              <input type="email" name="email" placeholder="heydi.mora4@gmail.com" required />
+              <input type="email" name="email" placeholder="you@example.com" required>
             </label>
             <label>
               Phone
-              <input type="tel" name="phone" placeholder="(555) 555-5555" />
+              <input type="tel" name="phone" placeholder="(555) 555-5555" required>
             </label>
             <label>
-              Budget range
-              <select name="budget">
-                <option value="">Select a range</option>
-                <option>Under $1,000</option>
-                <option>$1,000–$3,000</option>
-                <option>$3,000–$5,000</option>
-                <option>$5,000+</option>
-              </select>
-            </label>
-            <label>
-              Preferred timeline
-              <select name="timeline">
-                <option value="">Select a timeline</option>
-                <option>As soon as possible</option>
-                <option>Within 30 days</option>
-                <option>Within 60 days</option>
-                <option>Just exploring</option>
-              </select>
+              Company
+              <input type="text" name="company" placeholder="Company name">
             </label>
             <label>
               What do you need help with?
               <select name="service">
-                <option>Dashboard and reporting</option>
-                <option>Data strategy</option>
-                <option>Program evaluation</option>
-                <option>Ongoing analytics support</option>
-                <option>Something else</option>
+                <option>Analytics audit</option>
+                <option>Dashboard design</option>
+                <option>Growth strategy support</option>
+                <option>Ongoing advisory</option>
               </select>
             </label>
             <label>
-              How did you hear about me?
-              <input type="text" name="referral_source" placeholder="Referral, Google, LinkedIn, etc." />
-            </label>
-            <label>
               Project details
-              <textarea name="message" placeholder="Tell me a little about your goals, timeline, and what would make this project successful." required></textarea>
+              <textarea name="message" placeholder="Tell us about your goals, current challenges, and timeline."></textarea>
             </label>
             <button class="btn btn-primary" type="submit">Send inquiry</button>
-            <p style="font-size: 0.9rem; color: rgba(42,39,48,0.72); margin-top: 0.2rem;">Update the Formspree endpoint and redirect URL before publishing.</p>
+            <p id="formStatus" class="muted" style="margin:0.25rem 0 0;"></p>
           </form>
+        </div>
+
+        <div class="panel">
+          <h3>Contact details</h3>
+          <p class="muted">Replace the placeholders below with your business details before publishing.</p>
+          <div class="contact-list">
+            <div class="contact-item"><strong>Email</strong><br>hello@moragrowth.com</div>
+            <div class="contact-item"><strong>Phone</strong><br>(404) 555-0123</div>
+            <div class="contact-item"><strong>Location</strong><br>Atlanta, Georgia</div>
+            <div class="contact-item"><strong>Availability</strong><br>Discovery calls by appointment</div>
+          </div>
+          <h3>Publishing checklist</h3>
+          <div class="checklist">
+            <div>Replace <strong>logo.png</strong> with your final logo file.</div>
+            <div>Replace <strong>YOUR_GOOGLE_SCRIPT_URL_HERE</strong> with your deployed Google Apps Script web app URL.</div>
+            <div>Replace the thank-you page URL in the script with your real GitHub Pages thank-you URL.</div>
+            <div>Replace the Calendly link with your booking URL.</div>
+            <div>Update contact details, phone number, social links, and legal footer.</div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-inner">
-      <div>© <span id="year"></span> MORA Growth Analytics, LLC. All rights reserved.</div>
-      <div>Human-centered analytics for meaningful impact.</div>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="logo.png" alt="MORA Growth Analytics logo">
+        <p class="muted">MORA Growth Analytics helps businesses transform reporting into strategy with polished dashboards, clear recommendations, and measurable impact.</p>
+      </div>
+      <div>
+        <h3>Quick links</h3>
+        <div class="footer-links">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#insights">Insights</a>
+          <a href="#book">Book</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h3>Business details</h3>
+        <div class="footer-links">
+          <span>MORA Growth Analytics LLC</span>
+          <span>hello@moragrowth.com</span>
+          <span>Atlanta, Georgia</span>
+          <span><a href="https://calendly.com/yourname" target="_blank" rel="noopener">Calendly booking link</a></span>
+        </div>
+      </div>
     </div>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const form = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      formStatus.textContent = 'Sending...';
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        const response = await fetch('YOUR_GOOGLE_SCRIPT_URL_HERE', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8'
+          },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.text();
+
+        if (!response.ok || !/success/i.test(result)) {
+          throw new Error('Submission failed');
+        }
+
+        window.location.href = 'https://yourusername.github.io/your-repo-name/thank-you.html';
+      } catch (error) {
+        formStatus.textContent = 'There was a problem sending your message. Please email us directly at hello@moragrowth.com.';
+      }
+    });
   </script>
 </body>
 </html>
