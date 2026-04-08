@@ -26,6 +26,7 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -52,6 +53,10 @@
 
     p { margin: 0; }
 
+    section[id] {
+      scroll-margin-top: 180px;
+    }
+
     .topbar {
       background: #fff;
       border-bottom: 1px solid rgba(47, 34, 48, 0.06);
@@ -73,7 +78,7 @@
       display: inline-flex;
       align-items: flex-start;
       flex: 0 0 auto;
-      max-width: 520px;
+      max-width: 380px;
     }
 
     .brand img {
@@ -994,7 +999,7 @@
                   <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg>
                   <span>Usually within 1 business day.</span>
                 </div>
-                <a class="btn" href="https://cal.com/heydi/strategy-call" target="_blank" rel="noopener">Book on Calendly</a>
+                <a class="btn" href="https://cal.com/heydi/strategy-call" target="_blank" rel="noopener">Book on Cal.com</a>
               </div>
             </div>
           </div>
@@ -1002,31 +1007,47 @@
       </div>
     </section>
 
-    <section id="about" class="footer-space"></section>
-    <section id="insights" class="footer-space"></section>
+    <section id="about" class="curve-section">
+      <div class="container curve-content" style="padding-top: 44px; padding-bottom: 44px;">
+        <div class="section-label">About</div>
+        <h2 class="section-heading">Interpretation, judgment, and data science.</h2>
+        <p class="section-sub" style="max-width: 900px;">
+          MORA brings together psychology, literature, and data science to help leaders understand what their numbers mean, what deserves attention, and what action to take next.
+        </p>
+      </div>
+    </section>
+
+    <section id="insights" class="curve-section">
+      <div class="container curve-content" style="padding-top: 24px; padding-bottom: 52px;">
+        <div class="section-label">Insights</div>
+        <h2 class="section-heading">Thoughtful analytics for better decisions.</h2>
+        <p class="section-sub" style="max-width: 900px;">
+          Use this section for articles, case studies, reporting examples, or short perspectives on growth, operations, and decision-making.
+        </p>
+      </div>
+    </section>
   </main>
 
   <script>
-    // Optional client-side success handler for Google Apps Script form submissions.
-    // Keep this if your Apps Script returns JSON. Otherwise you can remove it.
     const form = document.getElementById('lead-form');
     form?.addEventListener('submit', async (event) => {
-      const action = form.getAttribute('action');
-      if (!action || action.includes('https://script.google.com/macros/s/AKfycbyOjhohErPrIcokrfoJwio-YLWEAFfRs51vbAHnmKRBTWhCdYBEZA3_Pq_rEFSTGOz2/exec')) return;
       event.preventDefault();
       const button = form.querySelector('button[type="submit"]');
       const originalText = button.textContent;
       button.disabled = true;
       button.textContent = 'Sending...';
       try {
-        const response = await fetch(action, {
+        const response = await fetch(form.action, {
           method: 'POST',
           body: new FormData(form),
         });
         if (!response.ok) throw new Error('Submission failed');
         form.reset();
         button.textContent = 'Sent';
-        setTimeout(() => { button.textContent = originalText; button.disabled = false; }, 1800);
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.disabled = false;
+        }, 1800);
       } catch (error) {
         button.textContent = 'Try Again';
         button.disabled = false;
