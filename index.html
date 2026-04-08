@@ -73,6 +73,8 @@
     .brand img {
       width: 180px;
       height: auto;
+      mix-blend-mode: multiply;
+      opacity: 0.98;
     }
 
     .nav-links {
@@ -178,15 +180,22 @@
     }
 
     .hero-side {
-      padding: 1.3rem;
+      padding: 1.6rem;
+      background: linear-gradient(180deg, rgba(255,255,255,0.62), rgba(255,255,255,0.42));
     }
 
     .logo-panel {
       border-radius: 22px;
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, #ffffff, #faf5f7);
-      padding: 1rem;
+      padding: 0;
       margin-bottom: 1rem;
+      background: transparent;
+      border: 0;
+    }
+
+    .logo-panel img {
+      width: 100%;
+      mix-blend-mode: multiply;
+      opacity: 0.96;
     }
 
     .mini-grid {
@@ -433,10 +442,10 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Data analytics • strategy • human-centered insight</div>
+          <div class="eyebrow">Data analytics • strategy •clear insight</div>
           <h1>Clear insights.<br><span style="font-style: italic; font-weight: 700;">Meaningful</span> impact.</h1>
           <p class="lead">
-            MORA Growth Analytics helps founders and growing businesses turn complex data into practical strategy. By combining data science with a strong understanding of human behavior and communication, we deliver analysis that is not only accurate, but actionable.
+            Mora Growth Analytics helps nonprofit and growing businesses turn complex data into practical strategy. By combining data science with a strong understanding of human behavior and communication, we deliver analysis that is not only accurate, but actionable.
           </p>
           <p class="lead">
             The result is better visibility, sharper decision-making, and a clearer path to growth.
@@ -462,8 +471,10 @@
         </div>
 
         <aside class="panel hero-side">
-          <div class="logo-panel">
-            <img src="logo.png" alt="MORA Growth Analytics full logo" />
+          <div style="margin-bottom:1rem;">
+            <p style="font-size:0.9rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--rose); font-weight:700; margin-bottom:0.75rem;">MORA Growth Analytics</p>
+            <h3 style="font-size:1.8rem; line-height:1.15; margin-bottom:0.8rem;">Analytics that feel aligned with the way real organizations operate.</h3>
+            <p class="muted" style="margin-bottom:1rem;">Rather than placing the full logo inside a box, this section now supports the brand through tone, color, and structure—so the logo feels integrated into the page instead of pasted onto it.</p>
           </div>
           <div class="mini-grid">
             <div class="mini-item"><span>Primary focus</span><span>Data analytics for growth</span></div>
@@ -692,7 +703,7 @@
           <div class="section-head">
             <h2>Let’s start with a clear conversation</h2>
             <p>
-              Whether you need better reporting, a more strategic view of performance, or support turning data into action, MORA Growth Analytics is here to help.
+              Whether you need better reporting, a more strategic view of performance, or support turning data into action, Mora Growth Analytics is here to help.
             </p>
           </div>
           <form id="contactForm">
@@ -716,9 +727,10 @@
               What do you need help with?
               <select name="service">
                 <option>Analytics audit</option>
-                <option>Dashboard design</option>
+                <option>Dashboard</option>
                 <option>Growth strategy support</option>
                 <option>General consultation</option>
+                <option>Data cleaning</option>
               </select>
             </label>
             <label>
@@ -733,19 +745,17 @@
         <div class="panel">
           <h3>Contact details</h3>
           <p class="muted">
-            Replace the details below with your preferred business contact information before publishing.
           </p>
           <div class="contact-list">
-            <div class="contact-item"><strong>Email</strong><br>hello@moragrowth.com</div>
-            <div class="contact-item"><strong>Phone</strong><br>(404) 555-0123</div>
-            <div class="contact-item"><strong>Location</strong><br>Atlanta, Georgia</div>
-            <div class="contact-item"><strong>Business</strong><br>MORA Growth Analytics LLC</div>
+            <div class="contact-item"><strong>Email</strong><br>heydi.mora4@gmail.com</div>
+            <div class="contact-item"><strong>Phone</strong><br>(202) 424-3505</div>
+            <div class="contact-item"><strong>Location</strong><br>Maryland</div>
+            <div class="contact-item"><strong>Business</strong><br>Mora Growth Analytics LLC</div>
           </div>
           <h3>What to expect</h3>
           <div class="checklist">
             <div>Thoughtful review of your inquiry and business needs.</div>
             <div>Clear guidance on the best starting point for support.</div>
-            <div>Professional, practical communication from first contact forward.</div>
           </div>
         </div>
       </div>
@@ -755,9 +765,9 @@
   <footer>
     <div class="container footer-grid">
       <div class="footer-brand">
-        <img src="logo.png" alt="MORA Growth Analytics logo">
+        <img src="logo.png" alt="MORA Growth Analytics logo" style="mix-blend-mode:multiply; opacity:0.96;">
         <p class="muted">
-          MORA Growth Analytics helps businesses turn complex data into clear strategy, stronger decisions, and measurable growth.
+          Mora Growth Analytics helps businesses turn complex data into clear strategy, stronger decisions, and measurable growth.
         </p>
       </div>
       <div>
@@ -773,8 +783,8 @@
       <div>
         <h3>Business details</h3>
         <div class="footer-links">
-          <span>MORA Growth Analytics LLC</span>
-          <span>hello@moragrowth.com</span>
+          <span>Mora Growth Analytics LLC</span>
+          <span>hello@Moragrowth.com</span>
           <span>Atlanta, Georgia</span>
           <span><a href="https://cal.com/heydi/strategy-call" target="_blank" rel="noopener">Schedule a call</a></span>
         </div>
@@ -810,7 +820,7 @@
 
         window.location.href = 'thank-you.html';
       } catch (error) {
-        formStatus.textContent = 'There was a problem sending your message. Please email us directly at hello@moragrowth.com.';
+        formStatus.textContent = 'There was a problem sending your message. Please email us directly at heydi.mora4@gmail.com.';
       }
     });
   </script>
