@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1200" viewBox="0 0 1800 1200" role="img" aria-label="Abstract analytics dashboard backdrop">
+  <rect width="1800" height="1200" fill="#dce9dd"/>
+  <rect x="1040" y="140" width="500" height="650" rx="18" fill="#ffffff" opacity="0.78"/>
+  <rect x="1100" y="210" width="280" height="24" rx="12" fill="#147f7b" opacity="0.62"/>
+  <rect x="1100" y="270" width="360" height="16" rx="8" fill="#182322" opacity="0.18"/>
+  <rect x="1100" y="308" width="300" height="16" rx="8" fill="#182322" opacity="0.16"/>
+  <rect x="1100" y="382" width="90" height="260" rx="12" fill="#147f7b" opacity="0.72"/>
+  <rect x="1228" y="455" width="90" height="187" rx="12" fill="#d86f51" opacity="0.78"/>
+  <rect x="1356" y="330" width="90" height="312" rx="12" fill="#c69b31" opacity="0.76"/>
+  <circle cx="1268" cy="825" r="180" fill="#ffffff" opacity="0.56"/>
+  <path d="M1268 645a180 180 0 0 1 173 132l-173 48z" fill="#147f7b" opacity="0.74"/>
+  <path d="M1441 777a180 180 0 0 1-100 207l-73-159z" fill="#d86f51" opacity="0.76"/>
+  <path d="M1341 984a180 180 0 0 1-214-38l141-121z" fill="#7a5c87" opacity="0.7"/>
+  <circle cx="1268" cy="825" r="86" fill="#dce9dd"/>
+  <rect x="150" y="230" width="560" height="350" rx="18" fill="#ffffff" opacity="0.42"/>
+  <path d="M220 500c92-96 162-38 248-104 86-66 128-130 196-90" fill="none" stroke="#147f7b" stroke-width="18" stroke-linecap="round" opacity="0.4"/>
+  <circle cx="220" cy="500" r="18" fill="#147f7b" opacity="0.6"/>
+  <circle cx="468" cy="396" r="18" fill="#d86f51" opacity="0.66"/>
+  <circle cx="664" cy="306" r="18" fill="#c69b31" opacity="0.7"/>
+</svg>
